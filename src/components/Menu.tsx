@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Navbar, Button } from "react-bootstrap";
-import LogoRedux from "../assets/png/redux.png";
+import LogoRedux from "../assets/png/logo.png";
 import { useDispatch } from "react-redux";
 import { setTweetModalToggle } from "../actions/modalsActions";
 
@@ -28,9 +28,9 @@ export default function Menu() {
           </Navbar.Brand>
         </Container>
       </Navbar>
-      
-      <Button 
-        className="btn-floating-new-tweet" 
+
+      <Button
+        className="btn-floating-new-tweet"
         onClick={() => handleOpenTweetModal(true)}
         title="Nuevo Tweet"
       >
