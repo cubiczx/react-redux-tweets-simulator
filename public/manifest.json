@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Redux Tweets",
+  "name": "Redux Tweets Simulator - Aprende Redux",
+  "description": "Simulador educativo de tweets para aprender Redux Toolkit con React y TypeScript",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#764abc",
+  "background_color": "#ffffff",
+  "categories": ["education", "productivity"],
+  "lang": "es"
 }

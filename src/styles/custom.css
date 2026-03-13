@@ -1,0 +1,338 @@
+/* Variables de colores modernos */
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --dark-gradient: linear-gradient(135deg, #2d3561 0%, #1f2544 100%);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  --border-radius: 20px;
+}
+
+/* Fondo general */
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.app-container {
+  background: rgba(255, 255, 255, 0.95);
+  min-height: 100vh;
+  backdrop-filter: blur(10px);
+}
+
+/* Navbar moderno */
+.modern-navbar {
+  background: var(--dark-gradient) !important;
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white !important;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: translateY(-2px);
+}
+
+.navbar-logo {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Botón flotante para nuevo tweet */
+.btn-floating-new-tweet {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: var(--secondary-gradient) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.5) !important;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-floating-new-tweet:hover {
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.7) !important;
+}
+
+.btn-floating-new-tweet:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .btn-floating-new-tweet {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Cards de tweets */
+.tweet-card {
+  background: white;
+  border-radius: var(--border-radius) !important;
+  border: none !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.tweet-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-gradient);
+}
+
+.tweet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow) !important;
+}
+
+.tweet-card .card-body {
+  padding: 1.5rem;
+}
+
+.tweet-author {
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.tweet-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.tweet-timestamp {
+  font-size: 0.875rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tweet-timestamp::before {
+  content: '🕒';
+}
+
+/* Botones modernos solo con iconos */
+.btn-icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  font-size: 1.25rem;
+  border: none !important;
+  background: transparent !important;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Botón Me Gusta */
+.btn-like {
+  color: #f5576c !important;
+}
+
+.btn-like:hover {
+  transform: scale(1.2) !important;
+  filter: drop-shadow(0 0 8px rgba(245, 87, 108, 0.6));
+}
+
+.btn-like:active {
+  animation: heartBeat 0.6s ease;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.3);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+/* Botón Editar */
+.btn-edit {
+  color: #4facfe !important;
+}
+
+.btn-edit:hover {
+  transform: rotate(15deg) scale(1.2) !important;
+  filter: drop-shadow(0 0 8px rgba(79, 172, 254, 0.6));
+}
+
+/* Botón Eliminar */
+.btn-delete {
+  color: #fa709a !important;
+}
+
+.btn-delete:hover {
+  transform: rotate(-15deg) scale(1.2) !important;
+  filter: drop-shadow(0 0 8px rgba(250, 112, 154, 0.6));
+}
+
+/* Contador de likes */
+.likes-count {
+  font-weight: 600;
+  color: #f5576c;
+  font-size: 1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Modales modernos */
+.modal-content {
+  border-radius: var(--border-radius) !important;
+  border: none !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3) !important;
+}
+
+.modal-header {
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+  border: none !important;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-footer {
+  border: none !important;
+  padding: 1.5rem;
+}
+
+/* Formularios */
+.form-control, .form-control:focus {
+  border-radius: 15px !important;
+  border: 2px solid #e0e0e0 !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25) !important;
+}
+
+/* Alertas */
+.alert {
+  border-radius: 15px !important;
+  border: none !important;
+  font-weight: 500;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tweet-card {
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* Contenedor de tweets */
+.tweets-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Efecto de escritura para el placeholder */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.form-control::placeholder {
+  animation: pulse 2s ease-in-out infinite;
+}

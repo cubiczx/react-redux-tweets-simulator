@@ -2,7 +2,18 @@
   "name": "redux-tweets-simulator",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "Xavier Palacín Ayuso",
+    "email": "cubiczx@hotmail.com",
+    "url": "https://github.com/cubiczx"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cubiczx/redux-tweets-simulator"
+  },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -11,14 +22,20 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "bootstrap": "^5.3.8",
+    "moment": "^2.30.1",
     "react": "^19.2.4",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.4",
+    "react-redux": "^9.2.0",
     "react-scripts": "5.0.1",
+    "redux": "^5.0.1",
     "typescript": "^4.9.5",
+    "uuid": "^13.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
