@@ -352,13 +352,36 @@ redux-tweets-simulator/
 
 ## 🧪 Testing
 
-El proyecto incluye configuración para tests con Jest y React Testing Library:
+El proyecto incluye una suite completa de tests con Jest y React Testing Library:
 
 ```bash
 npm test
 ```
 
-> **Nota**: Actualmente hay un issue conocido con la importación de UUID en Jest (módulos ESM). Para los tests de integración, considera configurar jest.config.js con transformIgnorePatterns.
+### Tests Incluidos
+
+- **App.test.tsx**: Tests del componente principal y renderizado inicial
+- **Menu.test.tsx**: Tests del navbar y botón flotante de nuevo tweet
+- **TweetsList.test.tsx**: Tests de la lista de tweets, acciones (like, edit, delete)
+- **FormAddTweet.test.tsx**: Tests del formulario de creación con validaciones
+- **ConfirmModal.test.tsx**: Tests del modal de confirmación reutilizable
+- **localStorage.test.ts**: Tests de persistencia y migración de datos
+- **tweetsReducer.test.ts**: Tests de las operaciones CRUD del reducer
+
+### Cobertura de Tests
+
+Los tests cubren:
+- ✅ Renderizado de componentes
+- ✅ Interacciones del usuario (clicks, inputs)
+- ✅ Gestión de estado con Redux
+- ✅ Validaciones de formularios
+- ✅ Persistencia en localStorage
+- ✅ Operaciones CRUD (Create, Read, Update, Delete)
+- ✅ Migración de datos antiguos
+
+### Nota Sobre UUID
+
+> **Issue conocido**: UUID usa módulos ESM que Jest no parsea por defecto. Los tests incluyen `jest.mock('uuid')` para evitar este problema. Si encuentras errores, todos los tests están configurados con el mock apropiado.
 
 ## 🎨 Personalización
 
