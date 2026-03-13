@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Button, Badge } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
 import { Tweet } from "../reducers/tweetsReducer";
